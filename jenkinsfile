@@ -5,7 +5,7 @@ pipeline {
    }
     environment {
         DOCKER_IMAGE_NAME = 'spe_mini_calc'
-        GITHUB_REPO_URL = 'https://github.com/BThangaraju/calculator.git'
+        GITHUB_REPO_URL = 'https://github.com/rajkanani17/SPE_Mini_Calculator.git'
     }
 
     stages {
@@ -31,8 +31,8 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerHubCred') {
-                    sh 'docker tag calculator iiitb/calculator:latest'
-                    sh 'docker push iiitb/calculator'
+                    sh 'docker tag spe_mini_calc rajkanani17/spe_mini_calc:latest'
+                    sh 'docker push rajkanani17/spe_mini_calc:latest'
                     }
                  }
             }
@@ -53,12 +53,12 @@ pipeline {
 }
  post {
         success {
-            mail to: 'b.thangaraju@iiitb.ac.in',
+            mail to: 'kananiraj.hemantbhai@iiitb.ac.in',
                  subject: "Application Deployment SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "The build was successful!"
         }
         failure {
-            mail to: 'b.thangaraju@iiitb.ac.in',
+            mail to: 'kananiraj.hemantbhai@iiitb.ac.in',
                  subject: "Application Deployment FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "The build failed."
         }

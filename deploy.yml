@@ -1,0 +1,34 @@
+---
+- name: Pull Docker Image from Docker Hub
+  hosts: localhost
+  remote_user: kanani-raj
+  become: false
+  tasks:
+    #    - name: Install pip3
+    #      apt:
+    #        name: python3-pip
+    #        state: present
+    #        update_cache: yes
+    #
+    #    - name: Install Python Docker SDK
+    #      pip:
+    #        name: docker
+    #        executable: pip3
+
+    - name: Pull Docker Image
+      docker_image:
+        name: "rajkanani17/spe_mini_calc"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Running container
+      shell: docker run -it -d --name spe_mini_calc rajkanani17/spe_mini_calc java \Main  # Subject to change
