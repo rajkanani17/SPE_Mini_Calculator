@@ -31,4 +31,4 @@
         state: started
 
     - name: Running container
-      shell: docker run -it -d --name spe_mini_calc rajkanani17/spe_mini_calc:latest   # Subject to change
+      shell: docker run -it -d --name spe_mini_calc rajkanani17/spe_mini_calc:latest    # Subject to change
