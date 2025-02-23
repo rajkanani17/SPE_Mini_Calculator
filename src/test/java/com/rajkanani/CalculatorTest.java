@@ -69,7 +69,7 @@ public class CalculatorTest extends TestCase {
     public void test_power_positive() {
         double x = 2.0;
         double y = 4.0;
-        double expectedResult = 16.0;  
+        double expectedResult = 16.0;
         Assert.assertEquals(expectedResult, calc.power(x, y), 0.001);
     }
 
