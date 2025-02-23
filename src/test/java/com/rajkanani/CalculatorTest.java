@@ -68,8 +68,8 @@ public class CalculatorTest extends TestCase {
     @Test
     public void test_power_positive() {
         double x = 2.0;
-        double y = 3.0;
-        double expectedResult = 8.0;  // 2^3 = 8
+        double y = 4.0;
+        double expectedResult = 16.0;  
         Assert.assertEquals(expectedResult, calc.power(x, y), 0.001);
     }
 
