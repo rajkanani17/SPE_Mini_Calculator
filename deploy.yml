@@ -30,11 +30,11 @@
         name: docker
         state: started
 
-    - name: Stop and removing existing container if it is running
+    - name: Stop and removing existing container if it is running #Add this because if same name container is running
       shell: |
         docker stop spe_mini_calc || true
         docker rm spe_mini_calc || true
       ignore_errors: yes
 
     - name: Running container
-      shell: docker run -it -d --name spe_mini_calc rajkanani17/spe_mini_calc:latest    # Subject to change
+      shell: docker run -it -d --name spe_mini_calc rajkanani17/spe_mini_calc:latest
