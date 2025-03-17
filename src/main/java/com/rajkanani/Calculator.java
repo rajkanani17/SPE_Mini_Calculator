@@ -34,13 +34,13 @@ public class Calculator {
 
             switch(choice){
                 case 1:
-                    System.out.println(sqrt(a));
+                    System.out.println("Answer : " + sqrt(a));
                     break;
                 case 2:
-                    System.out.println(fact((int) a));
+                    System.out.println("Answer : " + fact((int) a));
                     break;
                 case 3:
-                    System.out.println(ln(a));
+                    System.out.println("Answer : "+ ln(a));
                     break;
                 case 4:
                     System.out.println("Enter Second operand");
