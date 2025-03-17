@@ -30,7 +30,7 @@ public class Calculator {
             }
 
             System.out.println("Enter operand : ");
-            int a = sc.nextInt();
+            double a = sc.nextDouble();
 
             switch(choice){
                 case 1:
@@ -61,7 +61,7 @@ public class Calculator {
     }
 
     // ------- Factorial -------
-    public static long fact(int x) {
+    public static long fact(double x) {
         if (x < 0) {
             return -1;
         }
@@ -69,7 +69,7 @@ public class Calculator {
         for (int i = 1; i <= x; i++) {
             result *= i;
         }
-        return result;
+        return (int) result;
     }
 
     // ------- Natural Logarithm -------
