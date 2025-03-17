@@ -4,16 +4,6 @@
   remote_user: kanani-raj
   become: false
   tasks:
-#    - name: Install pip3
-#      apt:
-#        name: python3-pip
-#        state: present
-#        update_cache: yes
-#
-#    - name: Install Python Docker SDK
-#      pip:
-#        name: docker
-#        executable: pip3
 
     - name: Pull Docker Image
       docker_image:
